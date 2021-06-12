@@ -1,3 +1,5 @@
-# Getting Started with Create React App
+# Portfolio website
+Check out at [kpeti515.github.io](https://kpeti515.github.io/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+Made with [React](https://reactjs.org/)
