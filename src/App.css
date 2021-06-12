@@ -1,0 +1,19 @@
+.footer {
+  justify-content: center;
+  text-align     : center;
+}
+
+.copyright {
+  margin: 0px;
+
+}
+
+.icon {
+  height: 25px;
+  margin: 0px 3px;
+}
+
+.icon:hover {
+  transform : rotateY(360deg);
+  transition: 1.5s ease-in-out;
+}
