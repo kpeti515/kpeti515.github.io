@@ -23,7 +23,7 @@ function App() {
           <Route exact path='/about' component={About} />
           <Route exact path='/contact' component={Contact} />
           <Route exact path='/resume' component={Resume} />
-          <Route path='*' component={NoMatch} />
+          <Route component={NoMatch} status={404} />
         </Switch>
         <Footer />
       </div>
