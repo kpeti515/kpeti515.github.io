@@ -1,24 +1,18 @@
-import { useEffect, useState } from "react";
-import RepositoryList from "./RepositoryList";
+import { useState } from 'react';
+import { useFetchGithubInfo } from './hooks/useFetchGithubInfo';
+import { Loader } from './Loader';
+import RepositoryList from './RepositoryList';
 
 const Projects = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
-  const [repos, setRepos] = useState([]);
-  useEffect(() => {
-    const reposOfGitHubProfile = "https://api.github.com/users/kpeti515/repos";
-    fetch(reposOfGitHubProfile)
-      .then((response) => response.json())
-      .then((repositories) => {
-        setRepos(repositories);
-        setIsLoading(false);
-      });
-  }, []);
+  const reposOfGitHubProfile = 'https://api.github.com/users/kpeti515/repos';
+  const { response, error } = useFetchGithubInfo(reposOfGitHubProfile, setIsLoading);
 
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : (
-    <RepositoryList repositories={repos} />
-  );
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  return !isLoading && response ? <RepositoryList repositories={response} /> : <Loader />;
 };
 
 export default Projects;

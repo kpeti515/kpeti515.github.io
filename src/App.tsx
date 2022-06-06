@@ -1,33 +1,30 @@
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Projects from "./components/Projects";
-import Awards from "./components/Awards";
-import Contact from "./components/Contact";
-import Resume from "./components/Resume";
-import Skills from "./components/Skills";
-import About from "./components/About";
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
-import NoMatch from "./components/NoMatch";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import './App.css';
+import { routes } from './routes/routes';
 
 function App() {
+  const routeComponents = routes.map(({ path, component, exact }, key) => (
+    <Route
+      path={path}
+      component={component}
+      exact={exact}
+      key={key}
+    />
+  ));
+
   return (
-    <Router basename={process.env.PUBLIC_URL}>
-      <div className="App">
-        <Header />
-        <Switch>
-          <Route exact path="/" component={About} />
-          <Route exact path="/skills" component={Skills} />
-          <Route exact path="/awards" component={Awards} />
-          <Route exact path="/projects" component={Projects} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/resume" component={Resume} />
-          <Route path="*" component={NoMatch} />
-        </Switch>
+    <div className="App">
+      <Router basename={process.env.PUBLIC_URL}>
+        <Navbar />
+        <main>
+          <Switch>{routeComponents}</Switch>
+        </main>
         <Footer />
-      </div>
-    </Router>
+      </Router>
+    </div>
   );
 }
 

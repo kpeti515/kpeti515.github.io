@@ -1,13 +1,15 @@
-import Repository from "./Repository";
+import RepositoryInfo from './RepositoryInfo';
 
 const RepositoryList = ({ repositories }: { repositories: any }) => {
   return repositories
-    .filter(
-      (repository: any) =>
-        repository.fork === false && repository.description !== null
-    )
+    .filter((repository: any) => repository.fork === false && repository.description !== null)
     .map((repository: any) => {
-      return <Repository key={repository.id} repository={repository} />;
+      return (
+        <RepositoryInfo
+          key={repository.id}
+          repository={repository}
+        />
+      );
     });
 };
 

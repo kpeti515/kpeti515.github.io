@@ -1,11 +1,11 @@
 .footer {
   justify-content: center;
-  text-align     : center;
+  text-align: center;
+  flex: 0 0 auto;
 }
 
 .copyright {
   margin: 0px;
-
 }
 
 .icon {
@@ -14,6 +14,25 @@
 }
 
 .icon:hover {
-  transform : rotateY(360deg);
+  transform: rotateY(360deg);
   transition: 1.5s ease-in-out;
+}
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+#root,
+body,
+html {
+  height: 100%;
 }

@@ -1,7 +1,7 @@
-import facebookIcon from "../logos/fb.svg";
-import githubIcon from "../logos/github.svg";
-import gmailIcon from "../logos/gmail.svg";
-import linkedInIcon from "../logos/linkedin.svg";
+import facebookIcon from '../assets/logos/fb.svg';
+import githubIcon from '../assets/logos/github.svg';
+import gmailIcon from '../assets/logos/gmail.svg';
+import linkedInIcon from '../assets/logos/linkedin.svg';
 
 const Footer = () => {
   return (
@@ -11,10 +11,18 @@ const Footer = () => {
         rel="noopener noreferrer"
         target="_blank"
       >
-        <img className="icon" src={githubIcon} alt="link to github profile" />
+        <img
+          className="icon"
+          src={githubIcon}
+          alt="link to github profile"
+        />
       </a>
       <a href="mailto: lorandkallai@gmail.com">
-        <img className="icon" src={gmailIcon} alt="link to e-mail" />
+        <img
+          className="icon"
+          src={gmailIcon}
+          alt="link to e-mail"
+        />
       </a>
       <a
         href="https://www.linkedin.com/in/lorand-kallai-67747b183/"
